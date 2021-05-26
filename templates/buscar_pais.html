@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block contenido %}
+<form method="POST" action="/buscar_pais">
+    <label>Nombre del País</label>
+    <input type="text" name="nombre" placeholder="Nombre País" value="{{nombre_pais}}">
+    <input type="submit" value="Buscar" />
+</form>
+
+{% endblock %}
