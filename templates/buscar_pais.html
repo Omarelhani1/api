@@ -5,5 +5,13 @@
     <input type="text" name="nombre" placeholder="Nombre País" value="{{nombre_pais}}">
     <input type="submit" value="Buscar" />
 </form>
-
+<h1>Consultar la búsqueda</h1>
+<table>
+    <caption>Resultados de la busqueda</caption>
+        <tr>
+            <th>Confirmados={{confirmados}}</th>
+            <th>Recuperados={{recuperados}}</th>
+            <th>Muertos={{muertos}}</th>
+            <th>Poblacion={{poblacion}}</th>
+        </tr>
 {% endblock %}

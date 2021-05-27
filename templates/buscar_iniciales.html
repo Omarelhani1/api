@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block contenido %}
+<form method="POST" action="/buscar_iniciales.html">
+    <label>Iniciales del Pais</label>
+    <input type="text" name="nombre" placeholder="Inicial del pais" value="{{inicial}}">
+    <input type="submit" value="Buscar" />
+</form>
+
+{% endblock %}
