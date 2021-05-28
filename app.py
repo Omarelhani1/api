@@ -12,19 +12,18 @@ def inicio():
 
 @app.route('/buscar_pais',methods=["GET","POST"])
 def buscar_pais():
-    r1=requests.get(url_base1+nombre_pais)
-    if r1.status_code==200:
+    nombre_pais=request.form.get("nombre")
+    if request.method == "GET":
+        return render_template("buscar_pais.html", nombre_pais=nombre_pais)
+    else:
         parametros={"country":nombre_pais}
         r=requests.get(url_base+'/cases',params=parametros)
-        if r.status_code==200:
-            doc=r.json()
-            confirmados=doc.get("All").get("confirmed")
-            recuperados=doc.get("All").get("recovered")
-            muertos=doc.get("All").get("deaths")
-            poblacion=doc.get("All").get("population")
-    else:
-        return abort(404)
-    return render_template("buscar_pais.html",nombre_pais=nombre_pais,confirmados=confirmados,recuperados=recuperados,muertos=muertos,poblacion=poblacion)
+        doc=r.json()
+        confirmados=doc.get("All").get("confirmed")
+        recuperados=doc.get("All").get("recovered")
+        muertos=doc.get("All").get("deaths")
+        poblacion=doc.get("All").get("population")
+        return render_template("buscar_pais.html",nombre_pais=nombre_pais,confirmados=confirmados,recuperados=recuperados,muertos=muertos,poblacion=poblacion)
 
 @app.route('/buscar_continente',methods=["GET","POST"])
 def buscar_continente():
