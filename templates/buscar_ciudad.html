@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block contenido %}
+<form method="POST" action="/buscar_ciudad">
+    <label>Nombre del País y Primera letra en Inglés</label>
+    <input type="text" name="nombre" placeholder="Nombre Pais en Inglés" value="{{nombre_pais}}">
+    <label>Nombre de la Ciudad</label>
+    <input type="text" name="nombre1" placeholder="Nombre Comunidad Autónoma" value="{{nombre_ciudad}}">
+    <input type="submit" value="Buscar" />
+</form>
+<h1>Resultados de la Búsqueda</h1>
+<h2>Confirmados={{confirmados}}</h2>
+<h2>Recuperados={{recuperados}}</h2>
+<h2>Muertos={{muertos}}</h2>
+{% endblock %}
