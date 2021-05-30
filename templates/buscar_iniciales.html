@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block contenido %}
-<form method="POST" action="/buscar_iniciales.html">
-    <label>Iniciales del Pais</label>
+<form method="POST" action="/buscar_iniciales">
+    <label>Iniciales del Pais en Inglés y en Mayúsculas</label>
     <input type="text" name="nombre" placeholder="Inicial del pais" value="{{inicial}}">
     <input type="submit" value="Buscar" />
 </form>
+<h1>Resultados de la Búsqueda</h1>
+<h2>Confirmados={{confirmados}}</h2>
+<h2>Recuperados={{recuperados}}</h2>
+<h2>Muertos={{muertos}}</h2>
+<h2>Poblacion={{poblacion}}</h2>
 
 {% endblock %}
