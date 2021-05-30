@@ -1,8 +1,8 @@
-app = Flask(__name__)
 from flask import Flask, render_template,abort,request
 import json
 import os
 import requests
+app = Flask(__name__)
 url_base="https://covid-api.mmediagroup.fr/v1/"
 url_base1="https://restcountries.eu/rest/v2/name/"
 url_base2="https://restcountries.eu/rest/v2/alpha/"
